@@ -110,6 +110,8 @@ SystemInfo["CanDownmixAC3"] = fileHas("/proc/stb/audio/ac3_choices", "downmix")
 SystemInfo["CanDownmixDTS"] = fileHas("/proc/stb/audio/dts_choices", "downmix")
 SystemInfo["CanDownmixAAC"] = fileHas("/proc/stb/audio/aac_choices", "downmix")
 SystemInfo["HDMIAudioSource"] = fileCheck("/proc/stb/hdmi/audio_source")
+SystemInfo["CanAACTranscode"] = fileExists("/proc/stb/audio/aac_transcode_choices")
+SystemInfo["GraphicLCD"] = getBoxType() in ("vuultimo", "xpeedlx3", "et10000", "hd2400", "sezammarvel", "atemionemesis", "mbultra", "beyonwizt4")
 
 dev = ("root" in cmdline and cmdline['root'].startswith('/dev/')) and cmdline['root'][5:]
 while dev and not fileExists('/sys/block/' + dev):
