@@ -314,6 +314,18 @@ def InitUsageConfig():
 	config.usage.movielist_unseen = ConfigYesNo(default = False)
 
 	config.usage.swap_snr_on_osd = ConfigYesNo(default = False)
+	
+	config.usage.lcd_scroll_delay = ConfigSelection(default = "10000", choices = [
+		("10000", "10 " + _("seconds")),
+		("20000", "20 " + _("seconds")),
+		("30000", "30 " + _("seconds")),
+		("60000", "1 " + _("minute")),
+		("300000", "5 " + _("minutes")),
+		("noscrolling", _("off"))])
+	config.usage.lcd_scroll_speed = ConfigSelection(default = "300", choices = [
+		("500", _("slow")),
+		("300", _("normal")),
+		("100", _("fast"))])
 
 	def SpinnerOnOffChanged(configElement):
 		setSpinnerOnOff(int(configElement.value))
