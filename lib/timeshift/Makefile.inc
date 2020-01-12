@@ -1,2 +1,2 @@
-pluginexec_PROGRAMS = timeshift/createapscfiles
+pluginexecdir = $(pkgincludedir)timeshift/createapscfiles
 timeshift_createapscfiles_SOURCES = timeshift/createapscfiles.cc
